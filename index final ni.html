@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gilbert profile home</title>
+    <!-- Link Font Awesome yang benar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Tema dasar dan latar belakang */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: #0d0d0d;
+            background-image: radial-gradient(circle at 25% 25%, rgba(58, 115, 245, 0.15), rgba(0, 0, 0, 0) 50%), url('TAH APA.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ikon animasi di sekitar halaman */
+        .icon-animation {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.8;
+            animation: floatingIcons 10s infinite ease-in-out;
+        }
+
+        @keyframes floatingIcons {
+            0% { transform: translateY(0); opacity: 0.6; }
+            50% { transform: translateY(-50px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 0.6; }
+        }
+
+        .icon-1 {
+            top: 60px;
+            left: 20px;
+            animation-delay: 0s;
+            color: #ffcc00; /* Warna ikon kuning */
+        }
+
+        .icon-2 {
+            top: 80%;
+            left: 10%;
+            animation-delay: 2ms;
+            color: #ff3366; /* Warna ikon pink cerah */
+        }
+
+        .icon-3 {
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 4ms;
+            color: #66ff66; /* Warna ikon hijau terang */
+        }
+
+        .icon-4 {
+            bottom: 80%;
+            right: 20%;
+            animation-delay: 3ms;
+            color: #3399ff; /* Warna ikon biru cerah */
+        }
+
+        .icon-5 {
+            top: 90%;
+            right: 45%;
+            animation-delay: 4ms;
+            color: #ff6633; /* Warna ikon oranye */
+        }
+
+        /* Glassmorphism card */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+            transform: rotate(45deg);
+            animation: glowing 15s linear infinite;
+        }
+
+        @keyframes glowing {
+            0% { transform: rotate(45deg) translateX(0); }
+            50% { transform: rotate(45deg) translateX(50px); }
+            100% { transform: rotate(45deg) translateX(0); }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(58, 115, 245, 0.3);
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(58, 115, 245, 0.3);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(58, 115, 245, 0.5);
+            }
+        }
+
+        /* Tombol animasi keren */
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .profile-links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            color: #fff;
+            background: rgba(58, 115, 245, 0.2);
+            text-decoration: none;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(58, 115, 245, 0.5);
+        }
+
+        .profile-links a:hover {
+            color: #0d0d0d;
+            background: rgba(58, 115, 245, 0.8);
+            box-shadow: 0 0 30px rgba(58, 115, 245, 0.9), 0 0 60px rgba(58, 115, 245, 0.7);
+            transform: translateY(-10px);
+        }
+
+        .profile-links a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+            z-index: -1;
+        }
+
+        .profile-links a:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .profile-links a i {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer a {
+            color: rgba(58, 115, 245, 1);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Ikon animasi di sekitar halaman -->
+    <i class="fas fa-star icon-animation icon-1"></i>
+    <i class="fas fa-heart icon-animation icon-2"></i>
+    <i class="fas fa-moon icon-animation icon-3"></i>
+    <i class="fas fa-music icon-animation icon-4"></i>
+    <i class="fas fa-lightbulb icon-animation icon-5"></i>
+
+    <div class="card">
+        <h1>haloo!! ngapain sini?!</h1>
+
+        <!-- Tombol-tombol profil media sosial -->
+        <div class="profile-links">
+            <a href="https://www.instagram.com/gilbert_smrt" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+
+            <a href="https://wa.me/+6283100217608" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="https://t.me/glsmrtid" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+
+            <a href="https://www.facebook.com/Gilbert Smrt" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+
+            <a href="https://ngl.link/gilbert_smrt1" target="_blank">
+                <i class="fas fa-question-circle"></i> NGL
+            </a>
+        </div>
+    </div>
+
+    <footer>
+    
+        &copy; 2024 Gilbert Simarmata. Semua hak cipta dilindungi. <a href="#">Website Anda</a>
+    </footer>
+
+</body>
+</html>
